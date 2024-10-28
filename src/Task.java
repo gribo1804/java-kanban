@@ -1,5 +1,6 @@
+
 public class Task {
-    protected static int counter = 1;
+
     protected int id = 0;
     protected String nameTask;
     protected String description;
@@ -10,8 +11,8 @@ public class Task {
         this.nameTask = nameTask;
         this.description = description;
         this.status = status;
-        this.id = counter;
-        counter++;
+        this.id = TasksManager.counter;
+        TasksManager.counter++;
     }
 
      public Task() {
