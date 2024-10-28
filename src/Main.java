@@ -52,7 +52,7 @@ public class Main {
         manager.linkSubtaskToEpic(epicId1, subtaskId2);
         manager.linkSubtaskToEpic(epicId2, subtaskId3);
         manager.linkSubtaskToEpic(epicId2, subtaskId1);
-        System.out.println("Эпики:");
+        System.out.println("Эпики: ");
         for (Task epic : manager.getAllEpics()) {
             System.out.println(manager.getEpicStatus(epic.getId()));
             System.out.println(epic);
