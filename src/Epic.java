@@ -3,12 +3,13 @@ import java.util.List;
 
 
 public class Epic extends Task {
-    List<Integer> subtaskIds = new ArrayList<>() {};
-    Status status = Status.NEW;
+   private  List<Integer> subtaskIds = new ArrayList<>() {};
+   // Status status = Status.NEW;
     public Epic(String nameTask, String description) {
         this.nameTask = nameTask;
         this.description = description;
         this.id = TasksManager.counter;
+        this.status = Status.NEW;
         TasksManager.counter++;
     }
 

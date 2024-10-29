@@ -37,8 +37,9 @@ public class TasksManager {
 //    public Epic getEpicById(int id) {
 //        return epics.get(id);
 //    }
-
+// В этом метоте прото добавляется subtask
     public int addSubtask(Subtask subtask) {
+        // В этом метоте прото добавляется subtask
         subtasks.put(subtask.getId(), subtask);
         return subtask.getId();
     }
@@ -77,7 +78,12 @@ public class TasksManager {
     }
 
     public void updateSubtask(Subtask subtask) {
-        tasksMap.put(subtask.getId(), subtask);
+        subtasks.put(subtask.getId(),subtask);
+        for(Epic epic : epics.values()){
+           if(getEpicSubtask(epic.getId()).contains(subtask)){
+               epic.setStatus(getEpicStatus(epic.getId()));
+           }
+        }
     }
 
     public void updateEpic(Epic epic) {
@@ -92,7 +98,7 @@ public class TasksManager {
         return result;
     }
 
-    public void linkSubtaskToEpic(int epicId, int subId){
+    public void addSubtaskToEpic(int epicId, int subId){
         epics.get(epicId).setEpicSubtaskId(subId);
         epics.get(epicId).setStatus(getEpicStatus(epicId));
     }
